@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ToDoApplication</string>
+    <string name="cardNameTimer">To-Do List With Timer</string>
+    <string name="cardNameTimerOff">To-Do List Without Timer</string>
+    <string name="cardNameNotepad">Notepad</string>
+    <string name="cardDescTimer">Schedule to-dos and send notifications</string>
+    <string name="cardDescTimerOFF">Don\'t need time and notification</string>
+    <string name="cardDescNotepad">Save notes</string>
 </resources>
