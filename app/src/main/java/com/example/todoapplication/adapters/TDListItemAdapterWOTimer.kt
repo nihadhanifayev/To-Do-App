@@ -1,4 +1,4 @@
-package com.example.todoapplication.Adapters
+package com.example.todoapplication.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,8 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.example.todoapplication.Classes.TDListItemWOTimer
+import com.example.todoapplication.classes.TDListItemWOTimer
 import com.example.todoapplication.R
 
 class TDListItemAdapterWOTimer(private var mContext:Context,private var TDListItem:List<TDListItemWOTimer>):RecyclerView.Adapter<TDListItemAdapterWOTimer.CardDesignObjectsListItemWoTimer>() {

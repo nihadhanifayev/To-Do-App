@@ -1,8 +1,6 @@
-package com.example.todoapplication.Adapters
+package com.example.todoapplication.adapters
 
 import android.content.Context
-import android.media.Image
-import android.provider.ContactsContract.CommonDataKinds.Note
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todoapplication.Classes.Notepad
+import com.example.todoapplication.classes.Notepad
 import com.example.todoapplication.R
 
 class TDNotepadAdapter(private var mContext:Context,private var NoteList:List<Notepad>):RecyclerView.Adapter<TDNotepadAdapter.CardDesignObjects>() {

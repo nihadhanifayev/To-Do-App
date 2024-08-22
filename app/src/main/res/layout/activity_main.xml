@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable name="mainActivityObject" type="com.example.todoapplication.MainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,8 +15,11 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewTODOTimer"
-            android:layout_width="400dp"
+            android:layout_width="380dp"
             android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> mainActivityObject.goToToDoListWithTimer()}"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toTopOf="@+id/cardViewTODOTimerOff"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,8 +73,12 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewNote"
-            android:layout_width="400dp"
+            android:layout_width="380dp"
             android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> mainActivityObject.goToNotepad()}"
+            android:padding="5dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -123,8 +130,11 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewTODOTimerOff"
-            android:layout_width="400dp"
+            android:layout_width="380dp"
             android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> mainActivityObject.goToToDoListWithOutTimer()}"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toTopOf="@+id/cardViewNote"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +165,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="64dp"
+                    android:layout_marginTop="100dp"
                     android:text="@string/cardDescTimerOFF"
                     android:textColor="@color/colorPrimary5"
                     android:textSize="16sp"

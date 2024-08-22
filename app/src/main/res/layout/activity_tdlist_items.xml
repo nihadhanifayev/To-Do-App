@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable name="tdListItemWithTimer" type="com.example.todoapplication.TDListItems" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.TDListItems">
+        tools:context=".TDListItems">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ListItemRV"
@@ -29,6 +29,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:clickable="true"
+            android:onClick="@{()->tdListItemWithTimer.fabClick()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/add"

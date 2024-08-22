@@ -1,4 +1,4 @@
-package com.example.todoapplication.Adapters
+package com.example.todoapplication.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,10 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todoapplication.Classes.TDListItemWOTimer
-import com.example.todoapplication.Classes.TDListItemWTimer
+import com.example.todoapplication.classes.TDListItemWTimer
 import com.example.todoapplication.R
-import org.w3c.dom.Text
 
 class TDListItemAdapterWTimer(private val mContext: Context,private var TDListItems:List<TDListItemWTimer>):RecyclerView.Adapter<TDListItemAdapterWTimer.CardDesignObjectsListItemsWTimer>() {
 
