@@ -6,6 +6,8 @@
     <data>
         <variable name="tdlistWithTimerObject" type="com.example.todoapplication.TDListWithTimer" />
         <variable name="adapter" type="com.example.todoapplication.adapters.TDListAdapterWTimer" />
+        <variable name="TDList" type="java.util.ArrayList" />
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +20,7 @@
             android:id="@+id/tdlistRV"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="64dp"
             android:adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -33,11 +36,36 @@
             android:layout_marginBottom="24dp"
             android:clickable="true"
             android:contentDescription=""
-            android:text=""
             android:onClick="@{()->tdlistWithTimerObject.fabClick()}"
+            android:text=""
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/add"
             tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewListsTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Lists"
+            android:textColor="@color/colorPrimary4"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="There is no list yet"
+            android:visibility="@{TDList.size() == 0 ? View.VISIBLE : View.INVISIBLE }"
+            android:textColor="@color/colorPrimary5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewListsTimer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
