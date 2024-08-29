@@ -72,7 +72,7 @@ class TDListAdapterWTimer(private var mContext:Context,private var TDLIST:List<T
                         val designAlert = LayoutInflater.from(mContext).inflate(R.layout.alert_design_with_timer,null)
                         var title = designAlert.findViewById(R.id.editTextAlertTitleWithTimer) as EditText
                         var date = designAlert.findViewById(R.id.editTextDate) as EditText
-                        alertdialog.setTitle("To-Do List Create")
+                        alertdialog.setTitle("Edit List")
                         alertdialog.setIcon(R.drawable.desc)
                         alertdialog.setView(designAlert)
 
