@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -16,6 +17,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapplication.classes.TDListWTimer
 import com.example.todoapplication.R
+import com.example.todoapplication.TDListItems
 import com.example.todoapplication.models.TDListTimerModel
 import java.util.Calendar
 
@@ -49,7 +51,11 @@ class TDListAdapterWTimer(private var mContext:Context,private var TDLIST:List<T
 
         holder.textViewTitle.text = list.list_title
         holder.textViewDate.text = list.list_date
-
+        holder.cardViewWithTimer.setOnClickListener {
+            val intent = Intent(mContext,TDListItems::class.java)
+            intent.putExtra("List",list)
+            mContext.startActivity(intent)
+        }
         holder.imageViewDetail.setOnClickListener {
 
             val popupMenu = PopupMenu(mContext,holder.imageViewDetail)

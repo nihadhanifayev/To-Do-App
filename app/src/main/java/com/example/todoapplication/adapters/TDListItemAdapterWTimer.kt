@@ -1,6 +1,7 @@
 package com.example.todoapplication.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapplication.classes.TDListItemWTimer
 import com.example.todoapplication.R
+import com.example.todoapplication.models.TDListItemsTimerModel
 
-class TDListItemAdapterWTimer(private val mContext: Context,private var TDListItems:List<TDListItemWTimer>):RecyclerView.Adapter<TDListItemAdapterWTimer.CardDesignObjectsListItemsWTimer>() {
+class TDListItemAdapterWTimer(private val mContext: Context,private var TDListItems:List<TDListItemWTimer>,private var viewModel:TDListItemsTimerModel):RecyclerView.Adapter<TDListItemAdapterWTimer.CardDesignObjectsListItemsWTimer>() {
 
 
     inner class CardDesignObjectsListItemsWTimer(design: View):RecyclerView.ViewHolder(design){
@@ -44,6 +46,20 @@ class TDListItemAdapterWTimer(private val mContext: Context,private var TDListIt
     }
 
     override fun onBindViewHolder(holder: CardDesignObjectsListItemsWTimer, position: Int) {
-        var ListItem = TDListItems.get(position)
+        var listItem = TDListItems.get(position)
+
+        holder.chechBoxItem.text = listItem.item_title
+        holder.textViewDate.text = listItem.item_time
+        holder.textViewDesc.text = listItem.item_desc
+        holder.cardViewDeleteImage.setOnClickListener {
+            viewModel.TDListItemDelete(listItem.item_no)
+        }
+
+        holder.chechBoxItem.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                viewModel.TDListItemDelete(listItem.item_no)
+            }
+        }
+
     }
 }

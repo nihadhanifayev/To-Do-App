@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="140dp"
     android:orientation="vertical"
     android:padding="3dp">
 
@@ -20,50 +20,53 @@
 
             <CheckBox
                 android:id="@+id/checkBoxWithTimer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="CheckBox"
                 android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textViewItemDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxWithTimer" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewDescWithTimer"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginEnd="64dp"
+                android:layout_width="400dp"
+                android:layout_height="50dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/design_default_color_primary">
+                    android:background="@color/colorPrimary1">
 
                     <TextView
                         android:id="@+id/textViewDescWithTimerCard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:rotation="45"
+                        android:rotation="0"
                         android:text="Description"
                         android:textColor="@color/white"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -75,8 +78,8 @@
                 android:id="@+id/imageViewDeleteWithTimer"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/delete" />

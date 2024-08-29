@@ -28,11 +28,11 @@ class TDListWithTimer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         design = DataBindingUtil.setContentView(this,R.layout.activity_tdlist_with_timer)
         design.tdlistWithTimerObject = this
-        //design.textViewInfo.visibility = View.INVISIBLE
-        viewmodel.tdlistWithTimerAllLists(design.textViewInfo)
+        viewmodel.tdlistWithTimerAllLists()
         viewmodel.livedata.observe(this,{list ->
             design.tdList = list
-            adapter = TDListAdapterWTimer(this, design.tdList as ArrayList<TDListWTimer>,viewmodel)
+            TDLIST = list
+            adapter = TDListAdapterWTimer(this,TDLIST,viewmodel)
             design.adapter = adapter
         })
     }
@@ -65,7 +65,6 @@ class TDListWithTimer : AppCompatActivity() {
         }
         alertdialog.setPositiveButton("Ok"){dialoginterface,i ->
             viewmodel.tdlistWithTimerAdd(title.text.toString(),date.text.toString())
-            startActivity(Intent(this@TDListWithTimer, TDListItems::class.java))
         }
         alertdialog.setNegativeButton("Cancel"){dialoginterface,i ->
         }

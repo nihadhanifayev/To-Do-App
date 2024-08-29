@@ -26,7 +26,7 @@ class TDListTimerModel:ViewModel() {
         val tdlist = TDListWTimer("",title,date)
         refTDList.push().setValue(tdlist)
     }
-    fun tdlistWithTimerAllLists(infoText:View){
+    fun tdlistWithTimerAllLists(){
         refTDList.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 Tdlist.clear()
@@ -34,7 +34,6 @@ class TDListTimerModel:ViewModel() {
                 for(c in snapshot.children){
                     val list = c.getValue(TDListWTimer::class.java)
                     if (list != null){
-                        Log.e("giris","tesdiq")
                         list.list_no = c.key!!
                         Tdlist.add(list)
                     }
