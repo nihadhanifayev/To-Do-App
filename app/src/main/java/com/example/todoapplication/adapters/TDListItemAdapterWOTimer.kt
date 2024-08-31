@@ -11,8 +11,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapplication.classes.TDListItemWOTimer
 import com.example.todoapplication.R
+import com.example.todoapplication.models.TDListItemsWithoutTimerModel
 
-class TDListItemAdapterWOTimer(private var mContext:Context,private var TDListItem:List<TDListItemWOTimer>):RecyclerView.Adapter<TDListItemAdapterWOTimer.CardDesignObjectsListItemWoTimer>() {
+class TDListItemAdapterWOTimer(private var mContext:Context,private var TDListItem:List<TDListItemWOTimer>,private var viewmodel:TDListItemsWithoutTimerModel):RecyclerView.Adapter<TDListItemAdapterWOTimer.CardDesignObjectsListItemWoTimer>() {
 
     inner class CardDesignObjectsListItemWoTimer(design:View):RecyclerView.ViewHolder(design){
 
@@ -44,5 +45,16 @@ class TDListItemAdapterWOTimer(private var mContext:Context,private var TDListIt
 
     override fun onBindViewHolder(holder: CardDesignObjectsListItemWoTimer, position: Int) {
         var item = TDListItem.get(position)
+
+        holder.chechBoxItem.text = item.item_title
+        holder.textViewDesc.text = item.item_des
+        holder.cardViewDeleteImage.setOnClickListener {
+            viewmodel.TDListITemDelete(item.item_no)
+        }
+        holder.chechBoxItem.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked){
+                viewmodel.TDListITemDelete(item.item_no)
+            }
+        }
     }
 }

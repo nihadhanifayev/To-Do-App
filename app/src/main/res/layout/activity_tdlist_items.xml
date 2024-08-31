@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="There is no list yet"
+            android:text="There is no to do yet"
             android:textColor="@color/colorPrimary5"
             android:textStyle="bold"
             android:visibility="@{list.size() == 0 ? View.VISIBLE : View.INVISIBLE}"

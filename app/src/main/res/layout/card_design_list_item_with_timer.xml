@@ -47,7 +47,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardViewDescWithTimer"
-                android:layout_width="400dp"
+                android:layout_width="0dp"
                 android:layout_height="50dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
