@@ -5,6 +5,9 @@
 
     <data>
         <variable name="notepadContentObject" type="com.example.todoapplication.NotepadContentActivity" />
+        <variable name="note" type="com.example.todoapplication.classes.Notepad" />
+        <variable name="content" type="String" />
+        <variable name="title" type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
-            android:text="TextView"
+            android:layout_marginTop="32dp"
+            android:text="@{title}"
             android:textSize="34sp"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,11 +60,26 @@
                             android:ems="10"
                             android:hint="Content"
                             android:inputType="text|textMultiLine"
+                            android:text="@{content}"
                             android:textSize="20sp"
                             tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
                 </ScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary4"
+            android:text="Submit"
+            android:onClick="@{() -> notepadContentObject.contentText(note.note_id.toString(),editTextNotepadContent.getText().toString())}"
+            app:cornerRadius="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNotepadTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

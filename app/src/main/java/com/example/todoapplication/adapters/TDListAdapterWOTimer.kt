@@ -60,7 +60,6 @@ class TDListAdapterWOTimer(private var mContext:Context,private var TDLIST:List<
                         true
                     }
                     R.id.action_edit -> {
-                        val alertDialogUpdate = AlertDialog.Builder(mContext)
                         val alertdialog = AlertDialog.Builder(mContext)
                         val designAlert = LayoutInflater.from(mContext).inflate(R.layout.alert_design_without_timer,null)
                         var title = designAlert.findViewById(R.id.editTextAlertTitleWithoutTimer) as EditText
